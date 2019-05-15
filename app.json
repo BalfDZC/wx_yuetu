@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/collect/collect",
+    "pages/logs/logs",
+    "pages/text/text"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#e22018",
+    "navigationBarTitleText": "阅图Lite",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "red",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "精选"
+      },
+      {
+        "pagePath": "pages/collect/collect",
+        "text": "收藏"
+      }
+    ]
+  },
+  "position": "top",
+  "sitemapLocation": "sitemap.json"
+}

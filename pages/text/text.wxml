@@ -1,0 +1,48 @@
+<view>
+  <view class='title'>
+    <text>{{textData.title}}</text>
+  </view>
+  <view class='text-right'>{{time}}</view>
+
+  <view>
+    <image src="{{textData.cover}}" class="header-image" mode="aspectfill" />
+  </view>
+
+  <!-- wx:if="{{index%2==1}}" -->
+  <block wx:for="{{textContent}}" wx:key="index">
+    <view class='text_main'>
+      <block wx:if="{{item.length!=1}}">
+        <view class='text_main_title'>{{item[0].text?item[0].text:item[1].text}}</view>
+        <image src="{{item[1].url?item[1].url:item[0].url}}" class="text_image" mode="aspectfill" />
+      </block>
+      <block wx:if="{{item.length!=2}}">
+        <view class='text_main_title'>{{item[0].text}}</view>
+      </block>
+    </view>
+  </block>
+
+  <!-- <wxs module="_formatImg" src="./text.wxs"></wxs> -->
+
+  <view class='division'></view>
+  <!-- 推荐文章 -->
+  <view class='pushText'>
+    <view class='pushText_header'>推荐文章</view>
+    <block wx:for="{{pushTextDate}}" wx:key="index">
+      <navigator class='pushText_mian' url="../text/text?id={{item.id}}">
+        <view class='pushText_mian_left'>
+          <image src='{{item.cover}}' mode='widthFix'></image>
+        </view>
+        <view >
+        <view class='pushText_mian_right'> {{item.title}}</view>
+        <view class='TimeBox'>{{item.time}}</view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+
+  <view class='suspend'>
+    <view class='suspend_left iconfont icon-home' bindtap='goHome'>最新热文</view>
+    <view class='suspend_center'></view>
+    <button class='suspend_right iconfont icon-web-icon-' open-type='share'>转发给朋友</button>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+<view>
+<swiper
+  indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}"
+  interval="{{interval}}"
+  duration="{{duration}}"
+  indicator-dots
+  indicator-color="rgba(255, 255, 255, .3)"
+  indicator-active-color="#fff"
+>
+  <block wx:for="{{wxdata}}" wx:key="index">
+  <navigator  url="../text/text?id={{item.id}}">
+    <swiper-item>
+    <view class='swiper_title' >{{item.title}}</view>
+      <image src="{{item.cover}}" class="slide-image"  mode="aspectfill"/>
+    </swiper-item>
+    </navigator>
+  </block>
+</swiper>
+
+<block wx:for="{{content}}" wx:key="index">
+      <navigator class='content_box' 
+      url="../text/text?id={{item.id}}"
+      >  
+         <view class='content_main'>
+          <view class='content_title'>{{item.title}}</view>
+          <image src='{{item.cover}}'  class="title_image" mode="aspectfill"> </image>
+          </view>
+      </navigator>
+</block>
+
+</view>
